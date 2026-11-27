@@ -2,116 +2,145 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // =====================================
+  // NAVBAR SCROLL EFFECT
+  // =====================================
+
+  const header = document.getElementById("header");
+
+  function updateHeader() {
+    if (!header) return;
+
+    if (window.scrollY > 30) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+
+
+  // =====================================
   // MOBILE NAVIGATION
   // =====================================
 
-  const menuButton = document.querySelector(".menu-button");
-  const navLinks = document.querySelector(".nav-links");
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  const navLinks = navMenu
+    ? navMenu.querySelectorAll("a")
+    : [];
 
-  if (menuButton && navLinks) {
+  function closeMenu() {
+    if (!menuToggle || !navMenu) return;
 
-    menuButton.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("active");
+    navMenu.classList.remove("active");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
 
-      menuButton.setAttribute("aria-expanded", String(isOpen));
+  if (menuToggle && navMenu) {
 
-      menuButton.innerHTML = isOpen
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("active");
+
+      menuToggle.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close menu after selecting a link
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      });
+    navLinks.forEach(link => {
+      link.addEventListener("click", closeMenu);
     });
 
-    // Close menu when clicking outside
     document.addEventListener("click", event => {
-      const clickedInside =
-        navLinks.contains(event.target) ||
-        menuButton.contains(event.target);
+      const clickedInsideMenu = navMenu.contains(event.target);
+      const clickedToggle = menuToggle.contains(event.target);
 
-      if (!clickedInside) {
-        navLinks.classList.remove("active");
+      if (!clickedInsideMenu && !clickedToggle) {
+        closeMenu();
+      }
+    });
 
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) {
+        closeMenu();
       }
     });
 
   }
+
+
+  // =====================================
+  // FAQ ACCORDION
+  // =====================================
+
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+
+    if (!question) return;
+
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      // Tutup semua FAQ lainnya
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove("active");
+
+        const otherButton = otherItem.querySelector(".faq-question");
+
+        if (otherButton) {
+          otherButton.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Buka FAQ yang dipilih
+      if (!isActive) {
+        item.classList.add("active");
+        question.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
 
 
   // =====================================
   // FLOATING SOCIAL MENU
   // =====================================
 
-  const floatingSocial = document.querySelector("#floatingSocial");
-  const socialToggle = document.querySelector(".social-toggle");
-  const socialMenu = document.querySelector("#socialMenu");
+  const floatingSocial = document.getElementById("floatingSocial");
+  const socialToggle = document.getElementById("socialToggle");
+  const socialLinks = document.getElementById("floatingSocialLinks");
 
-  if (floatingSocial && socialToggle && socialMenu) {
+  function closeSocialMenu() {
+    if (!floatingSocial || !socialToggle) return;
 
-    socialToggle.addEventListener("click", () => {
-
-      const isOpen = floatingSocial.classList.toggle("active");
-
-      socialToggle.setAttribute("aria-expanded", String(isOpen));
-      socialMenu.setAttribute("aria-hidden", String(!isOpen));
-
-      socialToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Tutup media sosial" : "Buka media sosial"
-      );
-
-    });
-
-    // Close when clicking outside
-    document.addEventListener("click", event => {
-
-      if (!floatingSocial.contains(event.target)) {
-
-        floatingSocial.classList.remove("active");
-
-        socialToggle.setAttribute("aria-expanded", "false");
-        socialMenu.setAttribute("aria-hidden", "true");
-        socialToggle.setAttribute("aria-label", "Buka media sosial");
-
-      }
-
-    });
-
-    // Close with Escape key
-    document.addEventListener("keydown", event => {
-
-      if (event.key === "Escape") {
-
-        floatingSocial.classList.remove("active");
-
-        socialToggle.setAttribute("aria-expanded", "false");
-        socialMenu.setAttribute("aria-hidden", "true");
-        socialToggle.setAttribute("aria-label", "Buka media sosial");
-
-      }
-
-    });
-
+    floatingSocial.classList.remove("open");
+    socialToggle.setAttribute("aria-expanded", "false");
   }
 
+  if (floatingSocial && socialToggle) {
 
-  // =====================================
-  // AUTOMATIC FOOTER YEAR
-  // =====================================
+    socialToggle.addEventListener("click", () => {
+      const isOpen = floatingSocial.classList.toggle("open");
 
-  const yearElement = document.querySelector("#year");
+      socialToggle.setAttribute("aria-expanded", String(isOpen));
+    });
 
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+    document.addEventListener("click", event => {
+      const clickedInside = floatingSocial.contains(event.target);
+
+      if (!clickedInside) {
+        closeSocialMenu();
+      }
+    });
+
+    if (socialLinks) {
+      socialLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeSocialMenu);
+      });
+    }
+
   }
 
 
@@ -119,82 +148,75 @@ document.addEventListener("DOMContentLoaded", () => {
   // SCROLL REVEAL ANIMATION
   // =====================================
 
-  const revealElements = document.querySelectorAll(
-    ".section-kicker, " +
-    ".about-grid, " +
-    ".identity-item, " +
-    ".service-row, " +
-    ".process-list article, " +
-    ".advantage-grid article, " +
-    ".testimonial-card, " +
-    ".contact-inner"
-  );
+  const revealElements = document.querySelectorAll(".reveal");
 
-  revealElements.forEach(element => {
-    element.classList.add("reveal");
-  });
+  if ("IntersectionObserver" in window) {
 
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
 
-  if ("IntersectionObserver" in window && !prefersReducedMotion) {
+        entries.forEach(entry => {
 
-    const observer = new IntersectionObserver((entries, observerInstance) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
 
-      entries.forEach(entry => {
+        });
 
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("revealed");
-          observerInstance.unobserve(entry.target);
-
-        }
-
-      });
-
-    }, {
-      threshold: 0.12,
-      rootMargin: "0px 0px -35px 0px"
-    });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+      }
+    );
 
     revealElements.forEach(element => {
-      observer.observe(element);
+      revealObserver.observe(element);
     });
 
   } else {
 
     revealElements.forEach(element => {
-      element.classList.add("revealed");
+      element.classList.add("visible");
     });
 
   }
 
 
   // =====================================
-  // SMOOTH SCROLL
+  // FOOTER YEAR
   // =====================================
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  const currentYear = document.getElementById("currentYear");
 
-    anchor.addEventListener("click", event => {
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
 
-      const targetId = anchor.getAttribute("href");
+
+  // =====================================
+  // SMOOTH INTERNAL NAVIGATION
+  // =====================================
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", event => {
+
+      const targetId = link.getAttribute("href");
 
       if (!targetId || targetId === "#") return;
 
       const target = document.querySelector(targetId);
 
-      if (target) {
+      if (!target) return;
 
-        event.preventDefault();
+      event.preventDefault();
 
-        target.scrollIntoView({
-          behavior: prefersReducedMotion ? "auto" : "smooth",
-          block: "start"
-        });
-
-      }
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
 
     });
 
