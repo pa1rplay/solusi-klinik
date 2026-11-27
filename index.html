@@ -6,25 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Solusi Klinik Bali | Pendampingan Perizinan Klinik</title>
-  <meta name="description" content="Solusi Klinik membantu dokter dan pelaku usaha kesehatan dalam pendampingan perizinan klinik, SIP, legalitas fasilitas kesehatan, dan kebutuhan perizinan di Bali.">
-  <meta name="keywords" content="Solusi Klinik, Solusi Klinik Bali, izin klinik Bali, perizinan klinik, izin operasional klinik, SIP dokter">
+  <meta name="description" content="Solusi Klinik membantu dokter dan pelaku usaha kesehatan dalam pendampingan perizinan klinik, SIP, dan legalitas fasilitas kesehatan di Bali.">
+  <meta name="keywords" content="Solusi Klinik, Solusi Klinik Bali, izin klinik Bali, perizinan klinik, SIP dokter">
   <meta name="author" content="Solusi Klinik">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#081426">
   <link rel="canonical" href="https://solusi-klinik.netlify.app/">
+  <link rel="icon" href="assets/logo-solusi-klinik.png">
 
   <meta property="og:title" content="Solusi Klinik Bali">
   <meta property="og:description" content="Pendampingan profesional untuk kebutuhan perizinan dan legalitas fasilitas kesehatan.">
   <meta property="og:url" content="https://solusi-klinik.netlify.app/">
   <meta property="og:type" content="website">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#081426">
-
-  <link rel="icon" href="assets/logo-solusi-klinik.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -39,7 +36,7 @@
       "name": "Bali"
     },
     "telephone": "+6285190673747",
-    "email": "solusikliikidn@gmail.com",
+    "email": "solusiklinikidn@gmail.com",
     "founder": {
       "@type": "Person",
       "name": "Ni Made Sasih Suartini"
@@ -58,25 +55,48 @@
   <!-- NAVBAR -->
   <header class="header" id="header">
     <nav class="navbar container">
+
       <a href="#home" class="brand">
         <img src="assets/logo-solusi-klinik.png" alt="Logo Solusi Klinik">
-        <span>Solusi<span class="brand-accent">Klinik.</span></span>
+        <span>Solusi<span class="brand-accent">Klinik</span></span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <div class="nav-menu" id="navMenu">
-        <a href="#home">Beranda</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#services">Layanan</a>
-        <a href="#popular">Konten Populer</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-contact">Hubungi Kami</a>
+        <a href="#home" data-i18n="navHome">Beranda</a>
+        <a href="#about" data-i18n="navAbout">Tentang Kami</a>
+        <a href="#services" data-i18n="navServices">Layanan</a>
+        <a href="#popular" data-i18n="navMedia">Media Sosial</a>
+        <a href="#faq" data-i18n="navFaq">FAQ</a>
+        <a href="#contact" class="nav-contact" data-i18n="navContact">Hubungi Kami</a>
+
+        <div class="mobile-language">
+          <button type="button" class="language-btn active" data-language="id">ID</button>
+          <button type="button" class="language-btn" data-language="en">EN</button>
+        </div>
       </div>
+
+      <div class="nav-actions">
+        <div class="language-toggle" aria-label="Choose language">
+          <button type="button" class="language-btn active" data-language="id">ID</button>
+          <span>|</span>
+          <button type="button" class="language-btn" data-language="en">EN</button>
+        </div>
+
+        <a class="nav-contact"
+          href="https://wa.me/6285190673747"
+          target="_blank" rel="noopener noreferrer"
+          data-i18n="navContact">
+          Hubungi Kami
+        </a>
+      </div>
+
     </nav>
   </header>
 
@@ -88,18 +108,19 @@
       <div class="hero-glow"></div>
 
       <div class="container hero-container">
+
         <div class="hero-content reveal">
           <span class="eyebrow">
             <span class="eyebrow-dot"></span>
-            PARTNER PERIZINAN FASILITAS KESEHATAN
+            <span data-i18n="heroEyebrow">PARTNER PERIZINAN FASILITAS KESEHATAN</span>
           </span>
 
-          <h1>
+          <h1 data-i18n="heroTitle">
             Membangun Layanan Kesehatan,
-            <span>Dimulai dari Legalitas yang Tepat.</span>
+            <span>Dimulai dari Legalitas yang Tepat</span>
           </h1>
 
-          <p>
+          <p data-i18n="heroDescription">
             Kami mendampingi dokter dan pelaku usaha kesehatan dalam
             mengurus kebutuhan perizinan dan legalitas fasilitas kesehatan
             dengan proses yang terarah dan profesional.
@@ -107,40 +128,52 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary"
-               href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20ingin%20berkonsultasi%20mengenai%20perizinan%20klinik."
-               target="_blank" rel="noopener noreferrer">
-              Konsultasi Sekarang <span>↗</span>
+              href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20ingin%20berkonsultasi%20mengenai%20perizinan%20klinik."
+              target="_blank" rel="noopener noreferrer">
+              <span data-i18n="heroButton">Konsultasi Sekarang</span>
+              <span>↗</span>
             </a>
 
-            <a href="#services" class="btn btn-outline">
+            <a href="#services" class="btn btn-outline" data-i18n="heroExplore">
               Jelajahi Layanan
             </a>
           </div>
 
           <div class="hero-note">
             <span class="hero-note-line"></span>
-            <span>Pendampingan profesional untuk kebutuhan kesehatan Anda.</span>
+            <span data-i18n="heroNote">Pendampingan profesional untuk kebutuhan kesehatan Anda</span>
           </div>
         </div>
 
         <div class="hero-visual reveal">
           <div class="hero-image-frame">
             <div class="hero-image-content">
+
+              <img
+                class="hero-logo"
+                src="assets/logo-solusi-klinik.png"
+                alt="Solusi Klinik Logo"
+              >
+
               <span class="hero-image-label">SOLUSI KLINIK</span>
+
               <div class="hero-image-symbol">+</div>
-              <h2>Healthcare<br>Business Partner</h2>
-              <p>We care your healthy business.</p>
+
+              <h2>HEALTHCARE<br>LICENSING</h2>
+
+              <p>WE CARE YOUR HEALTHY BUSINESS</p>
             </div>
           </div>
 
           <div class="hero-floating-card">
             <span class="floating-icon">✦</span>
             <div>
-              <strong>Professional Support</strong>
-              <small>Pendampingan dari awal hingga selesai</small>
+              <strong data-i18n="heroFloatingTitle">Professional Support</strong>
+              <small data-i18n="heroFloatingDescription">Pendampingan dari awal hingga selesai</small>
             </div>
           </div>
         </div>
+
       </div>
 
       <div class="hero-bottom-line"></div>
@@ -150,26 +183,31 @@
     <!-- ABOUT -->
     <section class="section about-section" id="about">
       <div class="container">
+
         <div class="section-heading reveal">
-          <span class="section-label">TENTANG KAMI</span>
-          <h2>Mengenal <span>Solusi Klinik</span></h2>
-          <p>
+          <span class="section-label" data-i18n="aboutLabel">TENTANG KAMI</span>
+          <h2 data-i18n="aboutTitle">Mengenal <span>Solusi Klinik</span></h2>
+          <p data-i18n="aboutSubtitle">
             Partner pendampingan untuk membangun fasilitas kesehatan
             yang memiliki dasar legalitas yang tepat.
           </p>
         </div>
 
         <div class="about-grid">
+
           <div class="about-main reveal">
             <span class="about-number">01 / ABOUT US</span>
-            <h3>Lebih dari sekadar pengurusan dokumen.</h3>
-            <p>
+
+            <h3 data-i18n="aboutHeading">Lebih dari sekadar pengurusan dokumen</h3>
+
+            <p data-i18n="aboutDescription">
               Solusi Klinik adalah layanan pendampingan profesional yang
               membantu dokter pemilik klinik dan pelaku usaha kesehatan
               dalam mengurus berbagai kebutuhan perizinan dan legalitas
               fasilitas kesehatan.
             </p>
-            <p>
+
+            <p data-i18n="aboutDescription2">
               Kami memahami bahwa proses perizinan membutuhkan ketelitian,
               kesiapan dokumen, serta pemahaman terhadap ketentuan yang
               berlaku. Karena itu, kami hadir untuk membantu setiap tahap
@@ -179,18 +217,19 @@
 
           <div class="about-side reveal">
             <div class="about-side-top">
-              <span class="section-label">RUANG LINGKUP KAMI</span>
-              <h3>Hal yang dapat kami dampingi</h3>
+              <span class="section-label" data-i18n="scopeLabel">RUANG LINGKUP KAMI</span>
+              <h3 data-i18n="scopeTitle">Hal yang dapat kami dampingi</h3>
             </div>
 
             <ul class="about-list">
-              <li><span>01</span> Izin operasional klinik</li>
-              <li><span>02</span> SIP dokter dan tenaga kesehatan</li>
-              <li><span>03</span> Legalitas fasilitas kesehatan</li>
-              <li><span>04</span> Kelengkapan dokumen perizinan</li>
-              <li><span>05</span> Konsultasi dan pendampingan regulasi</li>
+              <li><span>01</span><span data-i18n="scope1">Izin operasional klinik</span></li>
+              <li><span>02</span><span data-i18n="scope2">SIP dokter dan tenaga kesehatan</span></li>
+              <li><span>03</span><span data-i18n="scope3">Legalitas fasilitas kesehatan</span></li>
+              <li><span>04</span><span data-i18n="scope4">Kelengkapan dokumen perizinan</span></li>
+              <li><span>05</span><span data-i18n="scope5">Konsultasi dan pendampingan regulasi</span></li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -199,88 +238,98 @@
     <!-- SERVICES -->
     <section class="section services-section" id="services">
       <div class="container">
+
         <div class="section-heading reveal">
-          <span class="section-label">LAYANAN KAMI</span>
-          <h2>Solusi untuk Setiap <span>Kebutuhan Anda.</span></h2>
-          <p>
+          <span class="section-label" data-i18n="servicesLabel">LAYANAN KAMI</span>
+          <h2 data-i18n="servicesTitle">Solusi untuk Setiap <span>Kebutuhan Anda</span></h2>
+          <p data-i18n="servicesSubtitle">
             Pendampingan yang disesuaikan dengan kebutuhan pendirian,
             pengembangan, dan legalitas fasilitas kesehatan.
           </p>
         </div>
 
         <div class="featured-service reveal">
+
           <div class="featured-service-content">
+
             <div class="featured-top">
-              <span class="service-badge">PALING DICARI</span>
+              <span class="service-badge" data-i18n="serviceBadge">PALING DICARI</span>
               <span class="service-index">01 / FEATURED SERVICE</span>
             </div>
 
             <h3>Klinik Utama &amp; Pratama</h3>
 
-            <p>
+            <p data-i18n="featuredDescription">
               Pendampingan bagi dokter, tenaga kesehatan, maupun pelaku
               usaha yang sedang mempersiapkan pendirian klinik dan
               kebutuhan legalitasnya.
             </p>
 
             <ul class="service-check-list">
-              <li>Izin operasional klinik</li>
-              <li>Pendampingan izin apotek sesuai kebutuhan</li>
-              <li>Legalitas badan usaha</li>
-              <li>Pendampingan proses perizinan hingga tahap penerbitan</li>
+              <li data-i18n="serviceCheck1">Izin operasional klinik</li>
+              <li data-i18n="serviceCheck2">Pendampingan izin apotek sesuai kebutuhan</li>
+              <li data-i18n="serviceCheck3">Legalitas badan usaha</li>
+              <li data-i18n="serviceCheck4">Pendampingan proses perizinan hingga tahap penerbitan</li>
             </ul>
 
             <a class="btn btn-primary"
-               href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pendirian%20Klinik%20Utama%2FPratama.%20Saya%20ingin%20mengetahui%20persyaratan%2C%20legalitas%2C%20dan%20proses%20pendampingannya."
-               target="_blank" rel="noopener noreferrer">
-              Konsultasikan Klinik Anda <span>↗</span>
+              href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pendirian%20Klinik%20Utama%2FPratama.%20Saya%20ingin%20mengetahui%20persyaratan%2C%20legalitas%2C%20dan%20proses%20pendampingannya."
+              target="_blank" rel="noopener noreferrer">
+              <span data-i18n="serviceButton">Konsultasikan Klinik Anda</span>
+              <span>↗</span>
             </a>
+
           </div>
 
           <div class="featured-service-visual">
             <div class="service-visual-circle">
+              <img src="assets/logo-solusi-klinik.png" alt="Logo Solusi Klinik" class="service-logo">
               <span class="service-plus">+</span>
               <span class="service-visual-text">HEALTHCARE<br>LICENSING</span>
             </div>
-            <span class="visual-caption">BUILD WITH THE RIGHT FOUNDATION.</span>
+            <span class="visual-caption">BUILD WITH THE RIGHT FOUNDATION</span>
           </div>
+
         </div>
 
         <div class="service-cards">
+
           <article class="service-card reveal">
             <span class="service-card-number">02</span>
             <div class="service-card-icon">✦</div>
-            <h3>Praktik Mandiri &amp; SIP</h3>
-            <p>
+            <h3 data-i18n="service2Title">Praktik Mandiri &amp; SIP</h3>
+            <p data-i18n="service2Description">
               Pendampingan kebutuhan perizinan praktik mandiri serta
               Surat Izin Praktik bagi dokter dan tenaga kesehatan.
             </p>
             <a href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20ingin%20bertanya%20mengenai%20perizinan%20praktik%20mandiri%20dan%20SIP."
-               target="_blank" rel="noopener noreferrer">
-              Konsultasi layanan <span>↗</span>
+              target="_blank" rel="noopener noreferrer">
+              <span data-i18n="serviceMore">Konsultasi layanan</span> ↗
             </a>
           </article>
 
           <article class="service-card reveal">
             <span class="service-card-number">03</span>
             <div class="service-card-icon">◇</div>
-            <h3>Perubahan &amp; Pengembangan Klinik</h3>
-            <p>
+            <h3 data-i18n="service3Title">Perubahan &amp; Pengembangan Klinik</h3>
+            <p data-i18n="service3Description">
               Pendampingan perubahan data, pengembangan layanan,
               dan kebutuhan legalitas klinik lainnya.
             </p>
             <a href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20ingin%20berkonsultasi%20mengenai%20perubahan%20dan%20pengembangan%20klinik."
-               target="_blank" rel="noopener noreferrer">
-              Konsultasi layanan <span>↗</span>
+              target="_blank" rel="noopener noreferrer">
+              <span data-i18n="serviceMore">Konsultasi layanan</span> ↗
             </a>
           </article>
+
         </div>
 
-        <p class="service-disclaimer">
+        <p class="service-disclaimer" data-i18n="serviceDisclaimer">
           Setiap kebutuhan perizinan akan disesuaikan dengan ketentuan
           yang berlaku dan persyaratan dari instansi berwenang.
           Penerbitan izin merupakan kewenangan instansi terkait.
         </p>
+
       </div>
     </section>
 
@@ -288,39 +337,42 @@
     <!-- PROCESS -->
     <section class="section process-section" id="process">
       <div class="container">
+
         <div class="section-heading reveal">
-          <span class="section-label">CARA KERJA KAMI</span>
-          <h2>Proses yang Lebih <span>Terarah.</span></h2>
-          <p>
+          <span class="section-label" data-i18n="processLabel">CARA KERJA KAMI</span>
+          <h2 data-i18n="processTitle">Proses yang Lebih <span>Terarah</span></h2>
+          <p data-i18n="processSubtitle">
             Kami membantu Anda memahami tahapan yang perlu dipersiapkan
             sebelum dan selama proses perizinan.
           </p>
         </div>
 
         <div class="process-grid">
+
           <div class="process-item reveal">
             <span class="process-number">01</span>
-            <h3>Konsultasi</h3>
-            <p>Diskusikan kebutuhan dan rencana fasilitas kesehatan Anda.</p>
+            <h3 data-i18n="process1Title">Konsultasi</h3>
+            <p data-i18n="process1Description">Diskusikan kebutuhan dan rencana fasilitas kesehatan Anda.</p>
           </div>
 
           <div class="process-item reveal">
             <span class="process-number">02</span>
-            <h3>Persiapan Dokumen</h3>
-            <p>Identifikasi persyaratan dan kelengkapan dokumen yang dibutuhkan.</p>
+            <h3 data-i18n="process2Title">Persiapan Dokumen</h3>
+            <p data-i18n="process2Description">Identifikasi persyaratan dan kelengkapan dokumen yang dibutuhkan.</p>
           </div>
 
           <div class="process-item reveal">
             <span class="process-number">03</span>
-            <h3>Pendampingan</h3>
-            <p>Proses pengurusan didampingi sesuai kebutuhan dan ketentuan.</p>
+            <h3 data-i18n="process3Title">Pendampingan</h3>
+            <p data-i18n="process3Description">Proses pengurusan didampingi sesuai kebutuhan dan ketentuan.</p>
           </div>
 
           <div class="process-item reveal">
             <span class="process-number">04</span>
-            <h3>Tindak Lanjut</h3>
-            <p>Membantu memantau tahapan proses dan tindak lanjut persyaratan.</p>
+            <h3 data-i18n="process4Title">Tindak Lanjut</h3>
+            <p data-i18n="process4Description">Membantu memantau tahapan proses dan tindak lanjut persyaratan.</p>
           </div>
+
         </div>
       </div>
     </section>
@@ -330,156 +382,207 @@
     <section class="section commitment-section">
       <div class="container">
         <div class="commitment-content reveal">
-          <span class="section-label">KOMITMEN KAMI</span>
-          <h2>Ketelitian dalam Proses.<br><span>Kepercayaan dalam Pendampingan.</span></h2>
-          <p>
+
+          <span class="section-label" data-i18n="commitmentLabel">KOMITMEN KAMI</span>
+
+          <h2 data-i18n="commitmentTitle">
+            Ketelitian dalam Proses.
+            <br>
+            <span>Kepercayaan dalam Pendampingan.</span>
+          </h2>
+
+          <p data-i18n="commitmentDescription">
             Setiap kebutuhan memiliki detail yang berbeda. Kami berkomitmen
             memberikan pendampingan yang komunikatif, terarah, dan
             memperhatikan kelengkapan dokumen serta ketentuan yang berlaku.
           </p>
 
           <a href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20ingin%20berkonsultasi."
-             class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-            Mulai Konsultasi <span>↗</span>
+            class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="commitmentButton">Mulai Konsultasi</span> ↗
           </a>
+
         </div>
       </div>
     </section>
 
 
-    <!-- POPULAR CONTENT -->
+    <!-- SOCIAL MEDIA -->
     <section class="section popular-section" id="popular">
       <div class="container">
+
         <div class="section-heading reveal">
-          <span class="section-label">MEDIA SOSIAL</span>
-          <h2>Konten <span>Terpopuler.</span></h2>
-          <p>
-            Temukan informasi dan konten seputar perizinan serta
-            fasilitas kesehatan melalui media sosial kami.
+          <span class="section-label" data-i18n="mediaLabel">MEDIA SOSIAL KAMI</span>
+          <h2 data-i18n="mediaTitle">Ikuti Aktivitas <span>Solusi Klinik</span></h2>
+          <p data-i18n="mediaSubtitle">
+            Informasi, edukasi, dan cerita seputar perizinan fasilitas kesehatan.
           </p>
         </div>
 
+
         <!-- TIKTOK -->
         <div class="social-content-block">
+
           <div class="social-content-heading reveal">
             <div>
-              <span class="section-label">SHORT VIDEO</span>
-              <h3>Popular on <span>TikTok.</span></h3>
-              <p>@solusiklinik</p>
+              <span class="section-label">SHORT VIDEOS</span>
+              <h3>TikTok <span>@solusiklinik</span></h3>
+              <p data-i18n="tiktokSubtitle">Informasi dan edukasi melalui video singkat</p>
             </div>
+
             <a href="https://www.tiktok.com/@solusiklinik"
-               target="_blank" rel="noopener noreferrer" class="social-profile-link">
-              Kunjungi TikTok ↗
+              target="_blank" rel="noopener noreferrer" class="social-profile-link">
+              <span data-i18n="visitTikTok">Kunjungi TikTok</span> ↗
             </a>
           </div>
 
           <div class="ranking-grid">
+
             <a class="ranking-card reveal"
-               href="https://www.tiktok.com/@solusiklinik/video/7571060599539436821"
-               target="_blank" rel="noopener noreferrer">
-              <span class="ranking-number">01</span>
-              <div>
-                <span class="ranking-label">PERINGKAT #1</span>
-                <h4>TikTok</h4>
-                <span class="ranking-action">Tonton video ↗</span>
+              href="https://www.tiktok.com/@solusiklinik/video/7571060599539436821"
+              target="_blank" rel="noopener noreferrer">
+              <div class="video-thumb thumb-tiktok">
+                <span class="thumbnail-platform">TIKTOK · 01</span>
+                <span class="thumbnail-play">▶</span>
+                <h4>Sudah bayar mahal, tapi izin klinik malah ditolak?! Bisa jadi, kamu salah pilih vendor!</h4>
+                <span class="thumbnail-brand">SOLUSI KLINIK</span>
+              </div>
+              <div class="ranking-card-footer">
+                <span class="ranking-label">VIDEO 01</span>
+                <span class="ranking-action" data-i18n="watchVideo">Tonton video ↗</span>
               </div>
             </a>
 
             <a class="ranking-card reveal"
-               href="https://www.tiktok.com/@solusiklinik/video/7562893253377281301"
-               target="_blank" rel="noopener noreferrer">
-              <span class="ranking-number">02</span>
-              <div>
-                <span class="ranking-label">PERINGKAT #2</span>
-                <h4>TikTok</h4>
-                <span class="ranking-action">Tonton video ↗</span>
+              href="https://www.tiktok.com/@solusiklinik/video/7562893253377281301"
+              target="_blank" rel="noopener noreferrer">
+              <div class="video-thumb thumb-tiktok">
+                <span class="thumbnail-platform">TIKTOK · 02</span>
+                <span class="thumbnail-play">▶</span>
+                <h4>Saya punya klinik tetapi tidak bergabung dalam fasyankes?! Apakah aman?</h4>
+                <span class="thumbnail-brand">SOLUSI KLINIK</span>
+              </div>
+              <div class="ranking-card-footer">
+                <span class="ranking-label">VIDEO 02</span>
+                <span class="ranking-action" data-i18n="watchVideo">Tonton video ↗</span>
               </div>
             </a>
 
             <a class="ranking-card reveal"
-               href="https://www.tiktok.com/@solusiklinik/video/7573603526966856981"
-               target="_blank" rel="noopener noreferrer">
-              <span class="ranking-number">03</span>
-              <div>
-                <span class="ranking-label">PERINGKAT #3</span>
-                <h4>TikTok</h4>
-                <span class="ranking-action">Tonton video ↗</span>
+              href="https://www.tiktok.com/@solusiklinik/video/7573603526966856981"
+              target="_blank" rel="noopener noreferrer">
+              <div class="video-thumb thumb-tiktok">
+                <span class="thumbnail-platform">TIKTOK · 03</span>
+                <span class="thumbnail-play">▶</span>
+                <h4>Jangan sampai klinik Anda terkena masalah karena perizinan klinik yang kurang!</h4>
+                <span class="thumbnail-brand">SOLUSI KLINIK</span>
+              </div>
+              <div class="ranking-card-footer">
+                <span class="ranking-label">VIDEO 03</span>
+                <span class="ranking-action" data-i18n="watchVideo">Tonton video ↗</span>
               </div>
             </a>
 
             <a class="ranking-card reveal"
-               href="https://www.tiktok.com/@solusiklinik/video/7556155190957608203"
-               target="_blank" rel="noopener noreferrer">
-              <span class="ranking-number">04</span>
-              <div>
-                <span class="ranking-label">PERINGKAT #4</span>
-                <h4>TikTok</h4>
-                <span class="ranking-action">Tonton video ↗</span>
+              href="https://www.tiktok.com/@solusiklinik/video/7556155190957608203"
+              target="_blank" rel="noopener noreferrer">
+              <div class="video-thumb thumb-tiktok">
+                <span class="thumbnail-platform">TIKTOK · 04</span>
+                <span class="thumbnail-play">▶</span>
+                <h4>Sistem kerja kami di Solusi Klinik</h4>
+                <span class="thumbnail-brand">SOLUSI KLINIK</span>
+              </div>
+              <div class="ranking-card-footer">
+                <span class="ranking-label">VIDEO 04</span>
+                <span class="ranking-action" data-i18n="watchVideo">Tonton video ↗</span>
               </div>
             </a>
+
           </div>
         </div>
+
 
         <!-- INSTAGRAM -->
         <div class="social-content-block instagram-block">
+
           <div class="social-content-heading reveal">
             <div>
-              <span class="section-label">PHOTO &amp; REELS</span>
-              <h3>Popular on <span>Instagram.</span></h3>
-              <p>@solusiklinik</p>
+              <span class="section-label">INSTAGRAM CONTENT</span>
+              <h3>Instagram <span>@solusiklinik</span></h3>
+              <p data-i18n="instagramSubtitle">Cerita, informasi, dan aktivitas Solusi Klinik</p>
             </div>
+
             <a href="https://www.instagram.com/solusiklinik/"
-               target="_blank" rel="noopener noreferrer" class="social-profile-link">
-              Kunjungi Instagram ↗
+              target="_blank" rel="noopener noreferrer" class="social-profile-link">
+              <span data-i18n="visitInstagram">Kunjungi Instagram</span> ↗
             </a>
           </div>
 
           <div class="ranking-grid">
+
             <a class="ranking-card reveal"
-               href="https://www.instagram.com/p/DaiTmBUktCi/"
-               target="_blank" rel="noopener noreferrer">
-              <span class="ranking-number">01</span>
-              <div>
-                <span class="ranking-label">PERINGKAT #1</span>
-                <h4>Instagram</h4>
-                <span class="ranking-action">Lihat postingan ↗</span>
+              href="https://www.instagram.com/p/DaiTmBUktCi/"
+              target="_blank" rel="noopener noreferrer">
+              <div class="video-thumb thumb-instagram">
+                <span class="thumbnail-platform">INSTAGRAM · 01</span>
+                <span class="thumbnail-play">↗</span>
+                <h4>Apa sih Solusi Klinik itu?</h4>
+                <span class="thumbnail-brand">SOLUSI KLINIK</span>
+              </div>
+              <div class="ranking-card-footer">
+                <span class="ranking-label">POST 01</span>
+                <span class="ranking-action" data-i18n="viewPost">Lihat postingan ↗</span>
               </div>
             </a>
 
             <a class="ranking-card reveal"
-               href="https://www.instagram.com/p/DaiSy41yPGH/"
-               target="_blank" rel="noopener noreferrer">
-              <span class="ranking-number">02</span>
-              <div>
-                <span class="ranking-label">PERINGKAT #2</span>
-                <h4>Instagram</h4>
-                <span class="ranking-action">Lihat postingan ↗</span>
+              href="https://www.instagram.com/p/DaiSy41yPGH/"
+              target="_blank" rel="noopener noreferrer">
+              <div class="video-thumb thumb-instagram">
+                <span class="thumbnail-platform">INSTAGRAM · 02</span>
+                <span class="thumbnail-play">↗</span>
+                <h4>Di balik setiap proses administrasi Solusi Klinik</h4>
+                <span class="thumbnail-brand">SOLUSI KLINIK</span>
+              </div>
+              <div class="ranking-card-footer">
+                <span class="ranking-label">POST 02</span>
+                <span class="ranking-action" data-i18n="viewPost">Lihat postingan ↗</span>
               </div>
             </a>
 
             <a class="ranking-card reveal"
-               href="https://www.instagram.com/p/DaiSxoMEvs3/"
-               target="_blank" rel="noopener noreferrer">
-              <span class="ranking-number">03</span>
-              <div>
-                <span class="ranking-label">PERINGKAT #3</span>
-                <h4>Instagram</h4>
-                <span class="ranking-action">Lihat postingan ↗</span>
+              href="https://www.instagram.com/p/DaiSxoMEvs3/"
+              target="_blank" rel="noopener noreferrer">
+              <div class="video-thumb thumb-instagram">
+                <span class="thumbnail-platform">INSTAGRAM · 03</span>
+                <span class="thumbnail-play">↗</span>
+                <h4>Kata siapa mengurus izin klinik itu susah dan rumit?!</h4>
+                <span class="thumbnail-brand">SOLUSI KLINIK</span>
+              </div>
+              <div class="ranking-card-footer">
+                <span class="ranking-label">POST 03</span>
+                <span class="ranking-action" data-i18n="viewPost">Lihat postingan ↗</span>
               </div>
             </a>
 
             <a class="ranking-card reveal"
-               href="https://www.instagram.com/p/DO-zTjlEhVv/"
-               target="_blank" rel="noopener noreferrer">
-              <span class="ranking-number">04</span>
-              <div>
-                <span class="ranking-label">PERINGKAT #4</span>
-                <h4>Instagram</h4>
-                <span class="ranking-action">Lihat postingan ↗</span>
+              href="https://www.instagram.com/p/DO-zTjlEhVv/"
+              target="_blank" rel="noopener noreferrer">
+              <div class="video-thumb thumb-instagram">
+                <span class="thumbnail-platform">INSTAGRAM · 04</span>
+                <span class="thumbnail-play">↗</span>
+                <h4>Apakah dokter praktik perlu izin?</h4>
+                <span class="thumbnail-brand">SOLUSI KLINIK</span>
+              </div>
+              <div class="ranking-card-footer">
+                <span class="ranking-label">POST 04</span>
+                <span class="ranking-action" data-i18n="viewPost">Lihat postingan ↗</span>
               </div>
             </a>
+
           </div>
         </div>
+
       </div>
     </section>
 
@@ -487,16 +590,18 @@
     <!-- FAQ -->
     <section class="section faq-section" id="faq">
       <div class="container faq-container">
+
         <div class="faq-intro reveal">
-          <span class="section-label">FREQUENTLY ASKED QUESTIONS</span>
-          <h2>Pertanyaan yang <span>Sering Ditanyakan.</span></h2>
-          <p>
+          <span class="section-label" data-i18n="faqLabel">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 data-i18n="faqTitle">Pertanyaan yang <span>Sering Ditanyakan</span></h2>
+          <p data-i18n="faqDescription">
             Beberapa informasi yang mungkin ingin Anda ketahui
             sebelum memulai konsultasi bersama Solusi Klinik.
           </p>
 
           <a href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20memiliki%20pertanyaan%20lebih%20lanjut."
-             class="text-link" target="_blank" rel="noopener noreferrer">
+            class="text-link" target="_blank" rel="noopener noreferrer"
+            data-i18n="faqContact">
             Masih ada pertanyaan? Hubungi kami ↗
           </a>
         </div>
@@ -505,11 +610,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Apa perbedaan Klinik Utama dan Klinik Pratama?</span>
+              <span data-i18n="faqQ1">Apa perbedaan Klinik Utama dan Klinik Pratama?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA1">
                 Klinik Pratama dan Klinik Utama memiliki perbedaan dalam
                 ruang lingkup pelayanan, jenis tenaga medis, serta
                 persyaratan penyelenggaraannya. Penentuan jenis klinik
@@ -521,11 +626,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Siapa saja yang bisa menggunakan layanan Solusi Klinik?</span>
+              <span data-i18n="faqQ2">Siapa saja yang bisa menggunakan layanan Solusi Klinik?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA2">
                 Layanan kami ditujukan bagi dokter, tenaga kesehatan,
                 pemilik klinik, dan pelaku usaha yang membutuhkan
                 pendampingan terkait perizinan serta legalitas
@@ -536,11 +641,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Apa saja perizinan yang bisa didampingi?</span>
+              <span data-i18n="faqQ3">Apa saja perizinan yang bisa didampingi?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA3">
                 Kami dapat membantu pendampingan izin operasional klinik,
                 SIP dokter dan tenaga kesehatan, legalitas fasilitas
                 kesehatan, serta kelengkapan dokumen perizinan
@@ -551,11 +656,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Apakah Solusi Klinik membantu pendirian badan usaha?</span>
+              <span data-i18n="faqQ4">Apakah Solusi Klinik membantu pendirian badan usaha?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA4">
                 Kami dapat membantu konsultasi dan pendampingan terkait
                 kebutuhan legalitas badan usaha yang berkaitan dengan
                 rencana pendirian fasilitas kesehatan. Detailnya dapat
@@ -566,11 +671,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Apakah pengurusan izin klinik dan apotek bisa dilakukan bersamaan?</span>
+              <span data-i18n="faqQ5">Apakah pengurusan izin klinik dan apotek bisa dilakukan bersamaan?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA5">
                 Kebutuhan perizinan klinik dan apotek dapat dikonsultasikan
                 secara bersamaan. Persyaratan dan prosesnya akan disesuaikan
                 dengan jenis usaha, kesiapan dokumen, serta ketentuan
@@ -581,11 +686,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Dokumen apa yang perlu dipersiapkan?</span>
+              <span data-i18n="faqQ6">Dokumen apa yang perlu dipersiapkan?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA6">
                 Dokumen yang dibutuhkan bergantung pada jenis fasilitas
                 kesehatan dan perizinan yang diajukan. Kami akan membantu
                 mengidentifikasi daftar persyaratan yang relevan
@@ -596,11 +701,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Berapa lama proses pengurusan perizinan?</span>
+              <span data-i18n="faqQ7">Berapa lama proses pengurusan perizinan?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA7">
                 Durasi proses dapat berbeda-beda, bergantung pada
                 kelengkapan dokumen, kesiapan fasilitas, jenis perizinan,
                 dan proses pemeriksaan instansi yang berwenang.
@@ -610,11 +715,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Apakah Solusi Klinik menjamin izin pasti terbit?</span>
+              <span data-i18n="faqQ8">Apakah Solusi Klinik menjamin izin pasti terbit?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA8">
                 Solusi Klinik memberikan pendampingan dalam proses
                 persiapan dan pengurusan perizinan. Namun, keputusan
                 penerbitan izin sepenuhnya merupakan kewenangan
@@ -625,11 +730,11 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>Apakah layanan Solusi Klinik mencakup seluruh Bali?</span>
+              <span data-i18n="faqQ9">Apakah layanan Solusi Klinik mencakup seluruh Bali?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>
+              <p data-i18n="faqA9">
                 Ya, layanan pendampingan Solusi Klinik ditujukan
                 untuk kebutuhan perizinan fasilitas kesehatan
                 di wilayah Bali.
@@ -645,23 +750,30 @@
     <!-- CONTACT -->
     <section class="section contact-section" id="contact">
       <div class="container">
+
         <div class="contact-box reveal">
+
           <div class="contact-content">
-            <span class="section-label">LET'S WORK TOGETHER</span>
-            <h2>Sudah Siap Memulai <span>Langkah Anda?</span></h2>
-            <p>
+            <span class="section-label" data-i18n="contactLabel">LET'S WORK TOGETHER</span>
+
+            <h2 data-i18n="contactTitle">
+              Sudah Siap Memulai <span>Langkah Anda?</span>
+            </h2>
+
+            <p data-i18n="contactDescription">
               Ceritakan kebutuhan perizinan fasilitas kesehatan Anda.
               Kami siap membantu memberikan informasi dan pendampingan
               yang sesuai.
             </p>
 
             <a href="https://wa.me/6285190673747?text=Halo%20Solusi%20Klinik%2C%20saya%20ingin%20berkonsultasi."
-               class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              Hubungi Solusi Klinik <span>↗</span>
+              class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="contactButton">Hubungi Solusi Klinik</span> ↗
             </a>
           </div>
 
           <div class="contact-details">
+
             <div class="contact-detail">
               <span>WHATSAPP</span>
               <a href="https://wa.me/6285190673747" target="_blank" rel="noopener noreferrer">
@@ -671,16 +783,18 @@
 
             <div class="contact-detail">
               <span>EMAIL</span>
-              <a href="mailto:solusikliikidn@gmail.com">
-                solusikliikidn@gmail.com ↗
+              <a href="mailto:solusiklinikidn@gmail.com">
+                solusiklinikidn@gmail.com ↗
               </a>
             </div>
 
             <div class="contact-detail">
-              <span>AREA LAYANAN</span>
+              <span data-i18n="serviceArea">AREA LAYANAN</span>
               <strong>Bali, Indonesia</strong>
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
@@ -691,64 +805,76 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
+
       <div class="footer-main">
+
         <div class="footer-brand">
           <a href="#home" class="brand">
             <img src="assets/logo-solusi-klinik.png" alt="Logo Solusi Klinik">
-            <span>Solusi<span class="brand-accent">Klinik.</span></span>
+            <span>Solusi<span class="brand-accent">Klinik</span></span>
           </a>
 
-          <p>
-            We care your healthy business.<br>
+          <p data-i18n="footerDescription">
+            We care your healthy business.
             Pendampingan perizinan dan legalitas fasilitas kesehatan.
           </p>
         </div>
 
         <div class="footer-links">
-          <h4>NAVIGASI</h4>
-          <a href="#home">Beranda</a>
-          <a href="#about">Tentang Kami</a>
-          <a href="#services">Layanan</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Kontak</a>
+          <h4 data-i18n="footerNavigation">NAVIGASI</h4>
+          <a href="#home" data-i18n="navHome">Beranda</a>
+          <a href="#about" data-i18n="navAbout">Tentang Kami</a>
+          <a href="#services" data-i18n="navServices">Layanan</a>
+          <a href="#faq" data-i18n="navFaq">FAQ</a>
+          <a href="#contact" data-i18n="navContact">Kontak</a>
         </div>
 
         <div class="footer-links">
-          <h4>MEDIA SOSIAL</h4>
+          <h4 data-i18n="footerSocial">MEDIA SOSIAL</h4>
           <a href="https://www.instagram.com/solusiklinik/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
           <a href="https://www.tiktok.com/@solusiklinik" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
           <a href="https://web.facebook.com/profile.php?id=61581153236972" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
         </div>
 
         <div class="footer-founder">
-          <h4>FOUNDER</h4>
+          <h4 data-i18n="footerFounder">FOUNDER</h4>
           <strong>Ni Made Sasih Suartini, S.Kp.</strong>
           <p>Solusi Klinik Indonesia</p>
         </div>
+
       </div>
 
       <div class="footer-bottom">
-        <p>© <span id="currentYear"></span> Solusi Klinik. All rights reserved.</p>
-        <span>Built with care in Bali.</span>
+
+        <div class="footer-copyright">
+          <p>© 2015 Solusi Klinik. <span data-i18n="footerRights">All rights reserved.</span></p>
+          <img src="assets/logo-solusi-klinik.png" alt="Solusi Klinik">
+        </div>
+
+        <span data-i18n="footerMade">Built with care in Bali</span>
+
       </div>
+
     </div>
   </footer>
 
 
   <!-- FLOATING SOCIAL MENU -->
   <div class="floating-social" id="floatingSocial">
+
     <div class="floating-social-links" id="floatingSocialLinks">
       <a href="https://wa.me/6285190673747" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
       <a href="https://www.instagram.com/solusiklinik/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
       <a href="https://www.tiktok.com/@solusiklinik" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TK</a>
       <a href="https://web.facebook.com/profile.php?id=61581153236972" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
-      <a href="mailto:solusikliikidn@gmail.com" aria-label="Email">@</a>
+      <a href="mailto:solusiklinikidn@gmail.com" aria-label="Email">@</a>
     </div>
 
     <button class="floating-social-toggle" id="socialToggle"
-            aria-label="Buka media sosial" aria-expanded="false">
+      aria-label="Open social media" aria-expanded="false">
       <span>+</span>
     </button>
+
   </div>
 
 
