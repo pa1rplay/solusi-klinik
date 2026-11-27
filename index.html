@@ -22,7 +22,148 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* LOGO */
+    .hero-image-symbol,
+    .service-plus {
+      display: none !important;
+    }
+
+    .hero-logo {
+      display: block;
+      width: 112px;
+      height: 112px;
+      object-fit: contain;
+      margin: 0 auto 18px;
+    }
+
+    .service-logo {
+      display: block;
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin: 0 auto 18px;
+    }
+
+    /* HERO FLOATING LOGO */
+    .floating-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .floating-icon img {
+      display: block;
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    /* SERVICE CARD LOGO */
+    .service-card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .service-card-icon img {
+      display: block;
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    /* FLOATING SOCIAL */
+    .floating-social-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .floating-social-toggle img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 7px;
+      border-radius: 50%;
+    }
+
+    /* DESKRIPSI MEDIA SOSIAL */
+    .ranking-card-description {
+      display: block;
+      padding: 0 16px 17px;
+      color: #aebdd0;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .ranking-card-footer {
+      margin-top: auto;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero-logo {
+        width: 90px;
+        height: 90px;
+      }
+
+      .service-logo {
+        width: 82px;
+        height: 82px;
+      }
+
+      .service-card-icon img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .ranking-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px;
+      }
+
+      .ranking-card {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .ranking-card-description {
+        font-size: 12px;
+        padding: 0 14px 15px;
+      }
+
+      .floating-social-toggle img {
+        padding: 5px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .social-content-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .contact-details {
+        min-width: 0;
+      }
+
+      .contact-detail a {
+        overflow-wrap: anywhere;
+      }
+    }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -100,7 +241,6 @@
     </nav>
   </header>
 
-
   <main>
 
     <!-- HERO -->
@@ -149,15 +289,11 @@
           <div class="hero-image-frame">
             <div class="hero-image-content">
 
-              <img
-                class="hero-logo"
+              <img class="hero-logo"
                 src="assets/logo-solusi-klinik.png"
-                alt="Solusi Klinik Logo"
-              >
+                alt="Logo Solusi Klinik">
 
               <span class="hero-image-label">SOLUSI KLINIK</span>
-
-              <div class="hero-image-symbol">+</div>
 
               <h2>HEALTHCARE<br>LICENSING</h2>
 
@@ -166,7 +302,9 @@
           </div>
 
           <div class="hero-floating-card">
-            <span class="floating-icon">✦</span>
+            <span class="floating-icon">
+              <img src="assets/logo-solusi-klinik.png" alt="Logo Solusi Klinik">
+            </span>
             <div>
               <strong data-i18n="heroFloatingTitle">Professional Support</strong>
               <small data-i18n="heroFloatingDescription">Pendampingan dari awal hingga selesai</small>
@@ -178,7 +316,6 @@
 
       <div class="hero-bottom-line"></div>
     </section>
-
 
     <!-- ABOUT -->
     <section class="section about-section" id="about">
@@ -197,7 +334,6 @@
 
           <div class="about-main reveal">
             <span class="about-number">01 / ABOUT US</span>
-
             <h3 data-i18n="aboutHeading">Lebih dari sekadar pengurusan dokumen</h3>
 
             <p data-i18n="aboutDescription">
@@ -233,7 +369,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- SERVICES -->
     <section class="section services-section" id="services">
@@ -283,8 +418,8 @@
 
           <div class="featured-service-visual">
             <div class="service-visual-circle">
-              <img src="assets/logo-solusi-klinik.png" alt="Logo Solusi Klinik" class="service-logo">
-              <span class="service-plus">+</span>
+              <img src="assets/logo-solusi-klinik.png"
+                alt="Logo Solusi Klinik" class="service-logo">
               <span class="service-visual-text">HEALTHCARE<br>LICENSING</span>
             </div>
             <span class="visual-caption">BUILD WITH THE RIGHT FOUNDATION</span>
@@ -296,7 +431,9 @@
 
           <article class="service-card reveal">
             <span class="service-card-number">02</span>
-            <div class="service-card-icon">✦</div>
+            <div class="service-card-icon">
+              <img src="assets/logo-solusi-klinik.png" alt="Logo Solusi Klinik">
+            </div>
             <h3 data-i18n="service2Title">Praktik Mandiri &amp; SIP</h3>
             <p data-i18n="service2Description">
               Pendampingan kebutuhan perizinan praktik mandiri serta
@@ -310,7 +447,9 @@
 
           <article class="service-card reveal">
             <span class="service-card-number">03</span>
-            <div class="service-card-icon">◇</div>
+            <div class="service-card-icon">
+              <img src="assets/logo-solusi-klinik.png" alt="Logo Solusi Klinik">
+            </div>
             <h3 data-i18n="service3Title">Perubahan &amp; Pengembangan Klinik</h3>
             <p data-i18n="service3Description">
               Pendampingan perubahan data, pengembangan layanan,
@@ -332,7 +471,6 @@
 
       </div>
     </section>
-
 
     <!-- PROCESS -->
     <section class="section process-section" id="process">
@@ -377,7 +515,6 @@
       </div>
     </section>
 
-
     <!-- COMMITMENT -->
     <section class="section commitment-section">
       <div class="container">
@@ -406,7 +543,6 @@
       </div>
     </section>
 
-
     <!-- SOCIAL MEDIA -->
     <section class="section popular-section" id="popular">
       <div class="container">
@@ -418,7 +554,6 @@
             Informasi, edukasi, dan cerita seputar perizinan fasilitas kesehatan.
           </p>
         </div>
-
 
         <!-- TIKTOK -->
         <div class="social-content-block">
@@ -492,6 +627,11 @@
                 <h4>Sistem kerja kami di Solusi Klinik</h4>
                 <span class="thumbnail-brand">SOLUSI KLINIK</span>
               </div>
+
+              <p class="ranking-card-description">
+                Tahapan kerja Solusi Klinik gimana sih? Dari konsultasi sampai pendampingan proses perizinan, yuk kenali bagaimana kami membantu kebutuhan legalitas klinik Anda.
+              </p>
+
               <div class="ranking-card-footer">
                 <span class="ranking-label">VIDEO 04</span>
                 <span class="ranking-action" data-i18n="watchVideo">Tonton video ↗</span>
@@ -500,7 +640,6 @@
 
           </div>
         </div>
-
 
         <!-- INSTAGRAM -->
         <div class="social-content-block instagram-block">
@@ -529,6 +668,11 @@
                 <h4>Apa sih Solusi Klinik itu?</h4>
                 <span class="thumbnail-brand">SOLUSI KLINIK</span>
               </div>
+
+              <p class="ranking-card-description">
+                Mau tahu Solusi Klinik itu gimana? Sini, nonton videonya! Kami siap membantu kebutuhan perizinan dan legalitas klinik Anda.
+              </p>
+
               <div class="ranking-card-footer">
                 <span class="ranking-label">POST 01</span>
                 <span class="ranking-action" data-i18n="viewPost">Lihat postingan ↗</span>
@@ -544,6 +688,11 @@
                 <h4>Di balik setiap proses administrasi Solusi Klinik</h4>
                 <span class="thumbnail-brand">SOLUSI KLINIK</span>
               </div>
+
+              <p class="ranking-card-description">
+                Mau lebih tahu tentang proses administrasi, ketelitian dokumen, dan pendampingan klien-klien kami? Yuk, kenali lebih dekat proses kerja Solusi Klinik.
+              </p>
+
               <div class="ranking-card-footer">
                 <span class="ranking-label">POST 02</span>
                 <span class="ranking-action" data-i18n="viewPost">Lihat postingan ↗</span>
@@ -585,7 +734,6 @@
 
       </div>
     </section>
-
 
     <!-- FAQ -->
     <section class="section faq-section" id="faq">
@@ -746,7 +894,6 @@
       </div>
     </section>
 
-
     <!-- CONTACT -->
     <section class="section contact-section" id="contact">
       <div class="container">
@@ -800,7 +947,6 @@
     </section>
 
   </main>
-
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -858,7 +1004,6 @@
     </div>
   </footer>
 
-
   <!-- FLOATING SOCIAL MENU -->
   <div class="floating-social" id="floatingSocial">
 
@@ -872,11 +1017,10 @@
 
     <button class="floating-social-toggle" id="socialToggle"
       aria-label="Open social media" aria-expanded="false">
-      <span>+</span>
+      <img src="assets/logo-solusi-klinik.png" alt="Buka media sosial Solusi Klinik">
     </button>
 
   </div>
-
 
   <script src="js/script.js"></script>
 </body>
